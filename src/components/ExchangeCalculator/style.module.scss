@@ -1,0 +1,18 @@
+.calculator{
+  margin-bottom: 5vh;
+  p{
+    font-family: Inter;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 16px;
+    text-align: left;
+    margin-bottom: 1vh;
+  }
+  .calcInputs{
+    width: max-content;
+    display: flex;
+    gap: 1px;
+    border: 1px solid #E4E4EB;
+    border-radius: 5px;
+  }
+}

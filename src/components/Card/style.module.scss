@@ -1,0 +1,160 @@
+.holder {
+  display: inline-flex;
+
+  .bankCard {
+    width: 324px;
+    height: 208px;
+    position: relative;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #A6C8FF 0%, #0043CE 100%);
+    box-sizing: border-box;
+    padding: 40px 20px;
+    font-family: Inter, serif;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 16px;
+    text-align: left;
+    color: #FFFFFF;
+    z-index: 3;
+
+    label {
+      width: 100%;
+    }
+
+    & > div {
+      display: flex;
+      flex-wrap: wrap;
+      margin-bottom: 1vh;
+      gap: 1vh;
+
+      & > input {
+        width: 100%;
+      }
+    }
+
+    .cardValidity {
+      display: flex;
+      flex-wrap: wrap;
+
+      .cardValidTime {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+
+        & > input {
+          width: 72px
+        }
+      }
+    }
+  }
+
+  .cvvPart {
+    width: 312px;
+    height: 200px;
+    border-radius: 12px;
+    position: relative;
+    background: #EBEBF0;
+    z-index: 0;
+    top: 3px;
+    left: -270px;
+    padding-top: 2vh;
+    box-sizing: border-box;
+    transition: 0.5s;
+    cursor: pointer;
+
+    &:hover, &:active {
+      left: -165px;
+    }
+
+    .line {
+      width: 100%;
+      height: 40px;
+      background: #C7C9D9;
+      margin: 0 0 1vh;
+    }
+
+    .cvvCodePart {
+      width: 105px;
+      margin-left: auto;
+      padding-right: 10px;
+
+      label {
+        font-family: Inter, serif;
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 16px;
+        text-align: left;
+        color: #555770;
+        margin-bottom: 3vh;
+      }
+
+      input {
+        width: 72px;
+      }
+
+      p {
+        font-family: Inter, serif;
+        font-size: 10px;
+        font-weight: 400;
+        line-height: 14px;
+        text-align: left;
+        color: #8F90A6;
+        margin-top: 0.5vh;
+      }
+    }
+  }
+}
+
+
+.input {
+  height: 40px;
+  border-radius: 8px;
+  outline: none;
+  border: 1px solid #E4E4EB;
+  padding-left: 15px;
+  font-family: Inter, serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  text-align: left;
+  color: #8F90A6;
+}
+
+@media only screen and (max-width: 515px) {
+  .holder {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    height: 310px;
+
+    .bankCard{
+      width: 100%;
+    }
+
+    .cvvPart {
+      width: 100%;
+      top: -105px;
+      left: 0;
+      padding: 20px;
+
+      &:hover, &:active {
+        left: 0;
+      }
+
+      .cvvCodePart {
+        width: 100%;
+        margin-top: 6vh;
+
+        & > div {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+
+          & > p {
+            width: 105px;
+          }
+        }
+      }
+    }
+  }
+}
