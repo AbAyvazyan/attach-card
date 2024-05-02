@@ -22,4 +22,7 @@ package-lock.json
 *.njsproj
 *.sln
 *.sw?
+<<<<<<< HEAD
 .env
+=======
+>>>>>>> 6de41de95923dcc746c9bfab1a6a8b3dc9dfbef4
