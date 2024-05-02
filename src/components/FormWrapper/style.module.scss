@@ -49,6 +49,7 @@
 @media only screen and (max-width: 550px) {
   .form {
     padding: 20px;
+    height: 100%;
     .formContent {
       h1 {
         font-size: 22px;
@@ -60,8 +61,6 @@
 @media only screen and (max-width: 375px) {
   .form {
     padding: 5px 5px 20px;
-    height: 100%;
-
   }
 }
 
