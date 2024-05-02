@@ -6,7 +6,7 @@ const Card = () => {
         <div className={styles.bankCard}>
             <div>
                 <label htmlFor="cardNumber">Номер карты</label>
-                <input className={styles.input} id='card_number' type="text" name='=card_number' placeholder='Номер карты' maxLength={16}/>
+                <input className={styles.input} id='card_number' type="text" name='card_number' placeholder='Номер карты' maxLength={16}/>
             </div>
 
             <div className={styles.cardValidity}>
