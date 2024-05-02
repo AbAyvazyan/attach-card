@@ -7,10 +7,7 @@ const CheckboxPart = () => {
         <div className={styles.checkBox}>
             <div>
                 <Checkbox
-<<<<<<< HEAD
                     name='isSaved'
-=======
->>>>>>> 6de41de95923dcc746c9bfab1a6a8b3dc9dfbef4
                     defaultChecked
                     sx={{'& .MuiSvgIcon-root': {fontSize: 28}}}
                 />
