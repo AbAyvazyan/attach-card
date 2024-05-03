@@ -10,7 +10,7 @@ const onSubmitHandler = async (e: FormEvent<HTMLFormElement>) => {
         formValues[key] = value;
     }
     const reqData: IFormValues = {
-        amount: "",
+        amount: 0,
         card_number: "",
         cvv: 0,
         expiry_month: "",
@@ -21,7 +21,7 @@ const onSubmitHandler = async (e: FormEvent<HTMLFormElement>) => {
         reqData[key] = formValues[key]
     }
 
-    if (!reqData.amount.trim()) {
+    if (!reqData.amount) {
         alert('Amount is 0')
         return
     }
@@ -37,12 +37,24 @@ const onSubmitHandler = async (e: FormEvent<HTMLFormElement>) => {
     }
 
     reqData.isSaved = !!reqData.isSaved
+    reqData.cvv = +reqData.cvv;
+    reqData.amount = +reqData.amount;
 
     try {
+        const csrfTokenMeta = document.querySelector('meta[name="csrf-token"]');
+        const csrfToken = csrfTokenMeta ? csrfTokenMeta.getAttribute('content') : '';
+
+        const headers = new Headers();
+        headers.append('Content-Type', 'application/json');
+        if (csrfToken) {
+            headers.append('X-CSRF-TOKEN', csrfToken);
+        }
 
         await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/cards`, {
             method: "POST",
-            body: JSON.stringify(reqData)
+            headers: headers,
+            body: JSON.stringify(reqData),
+            mode: 'no-cors',
         });
         alert('Payed')
     } catch (err) {

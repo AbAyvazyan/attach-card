@@ -14,7 +14,7 @@ interface IFormValues {
     expiry_month:string
     card_number:string
     expiry_year:string
-    amount:string
+    amount:number
     isSaved:boolean
 }
 

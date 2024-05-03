@@ -13,7 +13,6 @@ const AttachedCards = () => {
     useEffect(()=>{
         (async()=>{
             const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/cards`);
-            console.log(response)
             const data = await response.json()
             setAttachedCards(data)
         })()
